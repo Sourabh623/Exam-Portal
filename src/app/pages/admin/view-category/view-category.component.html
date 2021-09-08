@@ -1,0 +1,24 @@
+<mat-card class="mt10">
+    <h1 class="text-muted">All Categories</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <h5 (click)="myFunction()">  
+               <button mat-button ><mat-icon>sort</mat-icon></button>
+            </h5> 
+        </div>
+    </div>
+    <mat-list>
+        <mat-list-item *ngFor="let c of categories">
+            <mat-icon mat-list-icon>category</mat-icon>
+            <div mat-line>{{c.title}}</div>
+            <div mat-line>{{c.description}}</div>
+            <div mat-line>{{c.cId}}</div>
+            <mat-divider></mat-divider>
+            <button mat-button (click)="deteleCat(c.cId)" color="warn">Delete</button>
+            <button mat-button color="primary">Update</button>
+        </mat-list-item>
+    </mat-list>
+    <div class="container text-center mt-4">
+        <button routerLink="/admin-dashboard/add-category" mat-raised-button color="primary">Add New Category</button>
+    </div>
+</mat-card> 

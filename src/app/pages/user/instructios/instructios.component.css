@@ -1,0 +1,19 @@
+.title{
+    text-transform: capitalize;
+    font-weight: 450;
+    margin-left: 20px;
+}
+.format{
+    text-transform: capitalize;
+    font-weight: 550;
+}
+.primary:hover{
+    color: #3f51b5;
+    font-weight: 550;
+}
+ul li{
+    padding:3px;
+}
+.ml-a{
+    margin-left: 300px;
+}

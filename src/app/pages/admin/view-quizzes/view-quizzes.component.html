@@ -1,0 +1,82 @@
+<div class="row">
+    <div class="col-md-9">
+        <mat-card class="mt-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <h5 (click)="myFunction()">  
+                       <button mat-button ><mat-icon>sort</mat-icon></button>
+                    </h5> 
+                </div>
+            </div>
+        </mat-card>
+        <mat-card class="mt10" *ngFor="let q of quizzes">
+            <mat-card-header>
+                <div mat-card-avatar><button mat-button (click)="myFunction()" color=primary><mat-icon>quiz</mat-icon></button></div>
+               <div class="container">
+                   <div class="row">
+                       <div class="col-md-6">
+                        <mat-card-title>
+                            {{q.title}}
+                        </mat-card-title>
+                        <mat-card-subtitle>
+                            {{q.category.title}}
+                        </mat-card-subtitle>
+                       </div>
+                       <div class="col-md-6">
+                            <h3 style="text-align: right;" class="text-muted">
+                                20 Aug 2021
+                            </h3>
+                       </div>
+                   </div>
+                   <div class="row">
+                       <div class="col-md-12">
+                        <mat-card-content>
+                            <p>
+                             {{q.description}}
+                            </p>
+                          </mat-card-content>
+                       </div>
+                   </div>
+               </div>
+            </mat-card-header>
+            <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+ 
+              <mat-card-actions>
+                <button [routerLink]="'/admin-dashboard/view-questions/'+q.qId+'/'+q.title" mat-raised-button color="primary">Questions</button>
+                <button mat-stroked-button color="primary"><span>Max Marks:</span> <span class="mx-1">{{q.maxMarks}}</span></button>
+                <button mat-stroked-button color="primary"><span>Number of Questions:</span> <span class="mx-1">{{q.numberOfQuestions}}</span></button>
+                <button mat-stroked-button color="primary"><span>Number of Attempts:</span> <span class="mx-1">300</span></button>
+                <button mat-mini-fab (click)="deteleQuiz(q.qId)" color="primary" class="mx-2" aria-label="Example icon button with a delete icon">
+                    <mat-icon>delete</mat-icon>
+                </button>
+                <button [routerLink]="'/admin-dashboard/quiz/'+q.qId" mat-mini-fab color="primary" aria-label="Example icon button with a edit icon">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </mat-card-actions>
+        </mat-card>
+        <div class="container text-center mt-3">
+            <button routerLink="/admin-dashboard/add-quiz" mat-raised-button color="primary">Add Quiz</button>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <form action="#">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Search</mat-label>
+                <input matInput placeholder="search any quiz">
+                <mat-icon color="primary" matSuffix>search</mat-icon>
+                <mat-hint><strong>search any quiz</strong></mat-hint>
+            </mat-form-field>
+        </form>
+        <mat-card class="mt10">
+            <mat-action-list>
+                <button mat-list-item routerLink="/admin-dashboard"> <mat-icon mat-list-icon >home</mat-icon> Home </button>
+                <button mat-list-item routerLink="/admin-dashboard/profile"> <mat-icon mat-list-icon >account_circle</mat-icon> Profile </button>
+                <button mat-list-item routerLink="/admin-dashboard/categories"> <mat-icon mat-list-icon >list</mat-icon> Categories </button>
+                <button mat-list-item routerLink="/admin-dashboard/add-category"> <mat-icon mat-list-icon >add</mat-icon> Add Category </button>
+                <button mat-list-item routerLink="/admin-dashboard/quizzes"> <mat-icon mat-list-icon >quiz</mat-icon> Quizzes </button>
+                <button mat-list-item routerLink="/admin-dashboard/add-quiz"> <mat-icon mat-list-icon >playlist_add</mat-icon> Add Quiz </button>
+                <button mat-list-item> <mat-icon mat-list-icon >logout</mat-icon> Logout </button>
+            </mat-action-list>
+        </mat-card>        
+    </div>
+</div>

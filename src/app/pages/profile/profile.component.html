@@ -1,0 +1,66 @@
+<mat-card class="shadow" *ngIf="user">
+    <mat-card-content>
+        <div class="container">
+            <!-- {{user | json }} -->
+            <div class="row z-depth-3">
+                <!-- column first start -->
+                <div class="col-md-4 bg-color rounded-left">
+                    <!-- card start -->
+                    <div class="card-block text-center text-white">
+                        <img src="../../../assets/img/profile.png" class="mt-3"  alt="profile photo" />
+                        <h2 class="text-capitalize mt-2">{{login.getUser().firstName}} {{login.getUser().lastName}}</h2>
+                        <button mat-raised-button><mat-icon>edit</mat-icon></button> 
+                    </div>
+                    <!-- end card -->
+                </div>
+                <!-- column first end-->
+                
+                <!-- column second start -->
+                <div class="col-md-8 rounded-right">
+                    <h2 class="mt-3 text-center">Personal Info</h2>
+                    <div class="badge-primary w-25"><hr></div>
+
+                    <div class="row mx-5">
+                        <div class="col-md-8">
+                            <h3>Name:</h3>
+                            <h4 class="text-muted"><span>{{login.getUser().firstName}} {{login.getUser().lastName}}</span></h4>
+                        </div>
+                        <div class="col-md-4">
+                            <h3>User Name:</h3>
+                            <h4 class="text-muted"><span>{{login.getUser().username}}</span></h4>
+                        </div>
+                    </div>
+                    
+                    <h2 class="mt-3 text-center">Contact Info</h2>
+                    <div class="badge-primary w-25"><hr/></div>
+
+                    <div class="row mx-5">
+                        <div class="col-md-8">
+                            <h3>Phone:</h3>
+                            <h4 class="text-muted"><span>{{login.getUser().phone}}</span></h4>
+                        </div>
+                        <div class="col-md-4">
+                            <h3>Email Account:</h3>
+                            <h4 class="text-muted"><span>{{login.getUser().email}}</span></h4>
+                        </div>
+                    </div>
+
+                    <h2 class="mt-3 text-center">About</h2>
+                    <div class="badge-primary w-25"><hr/></div>
+                    <div class="row mx-5">
+                        <div class="col-md-8">
+                            <h3>Gender:</h3>
+                            <h4 class="text-muted text-capitalize"><span>{{login.getUser().gender}}</span></h4>
+                        </div>
+                        <div class="col-md-4">
+                            <h3>DOB:</h3>
+                            <h4 class="text-muted"><span>{{ login.getUser().dob | date}}</span></h4>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- column second end -->
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

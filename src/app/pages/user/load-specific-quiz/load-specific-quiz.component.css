@@ -1,0 +1,25 @@
+.truncate{
+    margin-left: 15px;
+    display: block;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.ml{
+    font-size: smaller;
+    margin-left: 0.5px;
+}
+.mt10{
+    margin-top: 10px;
+}
+.ml-a{
+    color:#3f51b5;
+    margin-left: 850px;
+}
+.mat-card {
+    height: 90% !important;
+    position: relative;
+    overflow: hidden;
+  }
+ 

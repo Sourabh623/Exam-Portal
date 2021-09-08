@@ -1,0 +1,46 @@
+<!-- {{quizzes|json}} -->
+<!-- {{categories|json}} -->
+<div class="container-fuild">
+    <mat-card class="mt10">Available Quiz
+        <button class="ml-a" mat-button [matMenuTriggerFor]="menu"><mat-icon>sort</mat-icon>SORT BY</button>
+        <mat-menu #menu="matMenu">
+        <button mat-menu-item>newest by</button>
+        <button mat-menu-item>sort by date</button>
+        </mat-menu>
+    </mat-card>
+        <div class="row mt-4">
+            <div class="col-md-4" *ngFor="let q of quizzes">
+                <mat-card class="mb-4">
+                    <img mat-card-image src="../../../../assets/quiz-images/Python-Programming-Language.png" alt="Photo of a Shiba Inu">
+                    <mat-card-header>
+                        <mat-card-title>{{q.title}}</mat-card-title>
+                        <mat-card-subtitle>{{q.category.title}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <p class="truncate">{{q.description}}</p>
+                    </mat-card-content>
+                    <mat-card-actions class="ml">
+                        <button mat-button color="warn" >View</button>
+                        <button mat-button 
+                        color="primary"
+                        routerLink="/user-dashboard/instructions/{{q.qId}}"
+                        >Start</button>
+                        <button 
+                        mat-button 
+                        color="primary"
+                        #tooltip="matTooltip"
+                        matTooltip="Number of Question"
+                        matTooltipHideDelay="500"
+                        >Q.{{q.numberOfQuestions}}</button>
+                        <button 
+                        mat-button 
+                        color="primary"
+                        #tooltip="matTooltip"
+                        matTooltip="Maximum Marks"
+                        [matTooltipPosition]="position.value"
+                        >MM.{{q.maxMarks}}</button>
+                    </mat-card-actions>       
+                </mat-card>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,60 @@
+    <div class="row">
+        <div class="col-md-9">
+            <h3 class="mt-3 text-muted">Question of {{title}}</h3>
+            <mat-card class="mt-3">
+                <div class="row">
+                    <div class="col-md-9"> 
+                        <button mat-button [matMenuTriggerFor]="menu"><mat-icon>sort</mat-icon>SORT BY</button>
+                        <mat-menu #menu="matMenu">
+                        <button mat-menu-item  (click)="myAscendingList()">ascending order</button>
+                        <button mat-menu-item  (click)="myDescendingList()">descending order</button>
+                        </mat-menu>
+                    </div>
+                    <div class="col-md-3">
+                        <button [routerLink]="'/admin-dashboard/add-question/'+qId+'/'+title" mat-button color="primary">Add Question</button>
+                    </div>
+                </div>
+            </mat-card>
+            <mat-card class="mt-3" *ngFor="let q of questions; let i=index;">
+                    <mat-card-content>
+                        <h3>
+                            <b>Q){{i+1}}</b>
+                            <span class="mx-2" [innerHTML]="q.content"></span>
+                        </h3>
+                    </mat-card-content>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4> a)  {{q.option1}}</h4>
+                        </div>
+                        <div class="col-md-6">
+                            <h4> b)  {{q.option2}}</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4> c)  {{q.option3}}</h4>
+                        </div>
+                        <div class="col-md-6">
+                            <h4> d)  {{q.option4}}</h4>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <h3><span style="color:#3f51b5;">correct answer -> </span> {{q.answer}}</h3>
+                        </div>   
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <button mat-button (click)="deleteQuestion(q.questionId)" color="warn">Delete</button>
+                        </div>   
+                        <div class="col-md-6">
+                            <button mat-button color="primary">Update</button>
+                        </div>   
+                    </div>
+            </mat-card>
+        </div> 
+        <div class="col-md-3">
+            <app-sidebar></app-sidebar>
+        </div>
+    </div>
+    

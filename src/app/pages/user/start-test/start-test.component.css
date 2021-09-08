@@ -1,0 +1,14 @@
+.mt10{
+    margin-top: 10px;
+}
+.mt10:hover{
+    box-shadow: 10px 10px 5px #ADD8E6;
+}
+.f{
+    text-align: center;
+    font-weight: 500;
+    color: #3f51b5;
+}
+ul li{
+    padding: 5px;
+}

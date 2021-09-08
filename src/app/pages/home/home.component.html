@@ -1,0 +1,57 @@
+<div class="row">
+        <div class="col-md-4 mx-4 mt-3">
+            <h1 class="text-capitalize">Welcome to exam portal</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla error soluta, dicta fuga minus quas corporis eum assumenda tempore consequuntur!</p>
+            <button mat-raised-button color="primary" (click)="show()">Get Started</button> 
+            <div class="col-md-12 mt-2">
+              <mat-accordion>
+                <mat-expansion-panel class="mb-1" (opened)="panelOpenState = true"
+                (closed)="panelOpenState = false">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Addmission
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <p>This is the primary content of the panel.</p>
+                </mat-expansion-panel>
+
+                <mat-expansion-panel (opened)="panelOpenState = true"
+                                     (closed)="panelOpenState = false">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Adcademic
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <p>I'm visible because I am open</p>
+                </mat-expansion-panel>
+              </mat-accordion>
+            </div>
+        </div>
+        <div class="col-md-7 mt-4">
+            <mdb-carousel [controls]="true" [animation]="'fade'">
+                <mdb-carousel-item>
+                  <img
+                    src="https://mdbcdn.b-cdn.net/img/new/slides/041.jpg"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </mdb-carousel-item>
+              
+                <mdb-carousel-item>
+                  <img
+                    src="https://mdbcdn.b-cdn.net/img/new/slides/042.jpg"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </mdb-carousel-item>
+              
+                <mdb-carousel-item>
+                  <img
+                    src="https://mdbcdn.b-cdn.net/img/new/slides/043.jpg"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </mdb-carousel-item>
+              </mdb-carousel>
+        </div>
+</div>

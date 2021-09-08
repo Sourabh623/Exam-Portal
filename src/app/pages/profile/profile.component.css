@@ -1,0 +1,23 @@
+.shadow{
+    margin-top: 10px;
+    box-shadow: 10px 10px 5px #3f51b5;
+}
+.profile-image{
+    max-width: 150px;
+    max-height: 150px;
+    object-fit: fill;
+    border: 1px solid #3f51b5;
+    border-radius: 50%;    
+}
+.text{
+    text-transform: capitalize;
+    text-shadow: 0 0 2px #3f51b5;
+}
+.bg-color{
+    background-color: #3f51b5;
+}
+.badge-primary{
+	background: #3f51b5!important; /* #0080ff blue color */
+    margin-left: 255px;
+}
+

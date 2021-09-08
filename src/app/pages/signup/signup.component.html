@@ -1,0 +1,84 @@
+<div class="container mt-4 mb-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <!-- Card Here -->
+            <mat-card>
+            <!-- logo here -->
+            <div class="container text-center">
+                <img src="../../../assets/img/signup.png" class="img-fluid rounded-circle" width="120px;" alt="">
+                <h1 class="text-muted">Signup Here</h1>
+            </div>
+            <!-- {{ user | json }} -->
+            <form (ngSubmit)="formSubmit()">
+                <!-- User Name Field -->
+                <mat-form-field class="w-100"  appearance="outline">
+                    <mat-label>User Name</mat-label>
+                    <input required [(ngModel)]="user.username"
+                    name="username"
+                    matInput placeholder="Enter here">
+                  </mat-form-field>
+
+                <!-- User Password Field -->
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input required [(ngModel)]="user.password"
+                    name="password"
+                    type="password" matInput placeholder="Enter here">
+                  </mat-form-field>
+
+                <!-- First Name Field -->
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label>First Name</mat-label>
+                    <input required [(ngModel)]="user.firstName"
+                    name="firstName"
+                    matInput placeholder="Enter here">
+                  </mat-form-field>
+                   
+                  <!-- Last Name Field -->
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label>Last Name</mat-label>
+                    <input required [(ngModel)]="user.lastName"
+                    name="lastName"
+                     matInput placeholder="Enter here">
+                  </mat-form-field>
+
+                   <!-- User Email Field -->
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input required [(ngModel)]="user.email"
+                    name="email"
+                     type="email" matInput placeholder="Enter here">
+                  </mat-form-field>
+
+                <!-- User Phone Field -->
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label>Phone</mat-label>
+                    <input required [(ngModel)]="user.phone"
+                    name="phone"
+                     type="number" matInput placeholder="Enter here">
+                  </mat-form-field>
+
+                   <!-- User Gender Field -->
+                   <mat-radio-group name="gender" [(ngModel)]="user.gender" required>
+                    <mat-label>Gender</mat-label><p></p>
+                    <mat-radio-button name="gender" value="male" checked>Male</mat-radio-button>&nbsp;
+                    <mat-radio-button name="gender" value="female">Female</mat-radio-button>
+                  </mat-radio-group><p></p>
+                    
+                  <!-- User DOB Field -->
+                  <mat-form-field appearance="fill">
+                    <mat-label>Choose a date of birth</mat-label>
+                    <input required name="dob" [(ngModel)]="user.dob" matInput [matDatepicker]="picker">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+
+                  <div class="container text-center">
+                      <button type="submit" mat-stroked-button color="primary">SignUp</button>
+                      <button type="reset" mat-stroked-button color="warn" class="mx-2">Reset</button>
+                  </div>
+            </form>
+        </mat-card>
+        </div>
+    </div>
+</div>
